@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
@@ -17,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { FilteredTodos } from '../shared/filter.pipe';
 import { TodoService } from '../shared/todo.service';
+import { DataService } from '../shared/data.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { TodoService } from '../shared/todo.service';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +48,7 @@ import { TodoService } from '../shared/todo.service';
     StatusBar,
     SplashScreen,
     TodoService,
+    DataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

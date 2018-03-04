@@ -1,15 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Perfil
-    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
   <div class="banner">
     <img src="assets/img/alex-profile-background.png" class="background">
-    <img src="assets/img/alex-profile-pic.png" class="avatar">
+    <img src="assets/img/alex-profile-pic.png" class="avatar" *ngIf="mostrarFoto">
   </div>
   <div text-center class="headline">
     <h2>Alex Wong</h2>
@@ -20,6 +17,22 @@
   <ion-slides pager>
     <ion-slide>
       <ion-list no-lines>
+        <ion-item>
+          <button ion-button (click)="goToHome()">go home</button>
+          <button ion-button (click)="goToFeed()">go feed</button>
+          <button ion-button menuToggle>Toggle Menu</button>
+        </ion-item>
+        <ion-item>
+          <input type="text" #question />
+          <button ion-button (click)="addQuestion(question.value)">preguntar</button>
+        </ion-item>
+        <ion-item>
+          <input type="text" #key />
+          <button ion-button (click)="updateNivel(key.value)">update</button>
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)="toggleFoto()" >toggleFoto</button>
+        </ion-item>
         <ion-item>
           <ion-icon name="ios-flag-outline" item-start></ion-icon>
           <h3>Origen</h3>

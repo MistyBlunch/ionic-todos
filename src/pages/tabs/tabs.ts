@@ -10,7 +10,7 @@ import { FeedPage } from '../feed/feed';
 export class TabsPage {
 
   tab1Root = AboutPage;
-  tab2Root = HomePage;
+  // tab2Root = HomePage;
   tab3Root = FeedPage;
 
   constructor() {

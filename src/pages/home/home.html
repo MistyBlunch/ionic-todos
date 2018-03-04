@@ -17,13 +17,13 @@
     <button ion-button color="danger" [ngClass]="buttonClass('pending')" (click)="showPending()">pendientes</button>
     <button ion-button color="dark" [ngClass]="buttonClass('all')" (click)="showAll()">todos</button>
   </ion-row>
-  <ion-card *ngIf="(todos | async | filteredTodos:done).length === 0">
+  <ion-card *ngIf="(todos |  filteredTodos:done).length === 0">
     <ion-card-content class="card-danger">
       No hay TODOs
     </ion-card-content>
   </ion-card>
   <ion-list no-lines>
-    <ion-item *ngFor="let todo of (todos | async | filteredTodos:done)">
+    <ion-item *ngFor="let todo of (todos | filteredTodos:done)">
       <ion-label>{{todo.description}}</ion-label>
       <ion-checkbox [checked]="todo.done" (ionChange)="updateTodo(todo)"></ion-checkbox>
     </ion-item>

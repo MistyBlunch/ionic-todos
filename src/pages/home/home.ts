@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
 
   done: boolean;
 
-  todos: Observable<Todo[]>;
+  todos: Todo[] = [];
 
   buttons = [
     {
@@ -35,7 +35,9 @@ export class HomePage implements OnInit {
     private todoService: TodoService) {}
 
   ngOnInit() {
-    this.todos = this.todoService.getTodos();
+    this.todoService.getTodos().subscribe(todos => {
+      this.todos = todos;
+    });
     this.showAll();
   }
 
