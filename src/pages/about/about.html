@@ -14,54 +14,29 @@
       Software Developer
     </ion-note>
   </div>
-  <ion-slides pager>
-    <ion-slide>
-      <ion-list no-lines>
-        <ion-item>
-          <button ion-button (click)="goToHome()">go home</button>
-          <button ion-button (click)="goToFeed()">go feed</button>
-          <button ion-button menuToggle>Toggle Menu</button>
-        </ion-item>
-        <ion-item>
-          <input type="text" #question />
-          <button ion-button (click)="addQuestion(question.value)">preguntar</button>
-        </ion-item>
-        <ion-item>
-          <input type="text" #key />
-          <button ion-button (click)="updateNivel(key.value)">update</button>
-        </ion-item>
-        <ion-item>
-          <button ion-button (click)="toggleFoto()" >toggleFoto</button>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="ios-flag-outline" item-start></ion-icon>
-          <h3>Origen</h3>
-          <p>
-            Lima, Peru
-          </p>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="ios-mail-outline" item-start></ion-icon>
-          <h3>E-mail</h3>
-          <p>
-            alwongm@gmail.com
-          </p>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="ios-phone-portrait-outline" item-start></ion-icon>
-          <h3>Telefono</h3>
-          <p>
-            987531800
-          </p>
-        </ion-item>
-      </ion-list>
-    </ion-slide>
-    <ion-slide>
-      <p>
-        Hola, soy Alex y soy software developer.
-      </p>
-    </ion-slide>
-  </ion-slides>
+  <ion-list no-lines>
+    <ion-item>
+      <button ion-button (click)="agregarRespuesta()">agregar respuesta</button>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button (click)="goToHome()">go home</button>
+      <button ion-button (click)="goToFeed()">go feed</button>
+      <button ion-button menuToggle>Toggle Menu</button>
+    </ion-item>
+    <ion-item>
+      <input type="text" #question />
+      <button ion-button (click)="addQuestion(question.value)">preguntar</button>
+    </ion-item>
+    <ion-item>
+      <input type="text" #key />
+      <button ion-button (click)="updateNivel(key.value)">update</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="toggleFoto()" >toggleFoto</button>
+    </ion-item>
+
+  </ion-list>
   <ion-row text-center>
     <ion-col>
       <button ion-button icon-only clear>

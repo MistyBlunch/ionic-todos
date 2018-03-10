@@ -13,15 +13,16 @@ import { DataService } from '../../shared/data.service';
 export class AboutPage implements OnInit {
 
   mostrarFoto: boolean = true;
+  preguntas: Array<any> = [];
 
   constructor(public navCtrl: NavController, public dataService: DataService) {
 
   }
 
   ngOnInit() {
-    this.dataService.getQuestions().subscribe(data => {
-      console.log('data', data);
-    });
+    this.dataService.getQuestions().subscribe(preguntas => {
+      this.preguntas = preguntas;
+    })
   }
 
   toggleFoto() {
@@ -42,6 +43,10 @@ export class AboutPage implements OnInit {
 
   updateNivel(key: string) {
     this.dataService.updateNivel(key, 'avanzado');
+  }
+
+  agregarRespuesta() {
+    this.dataService.addAnswer('alternativa1', 'pregunta2', 'salome');
   }
 
 

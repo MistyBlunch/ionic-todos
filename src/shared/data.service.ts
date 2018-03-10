@@ -6,10 +6,12 @@ import { Observable } from 'rxjs/Observable';
 export class DataService {
 
   ref: AngularFireList<any>;
+  answersRef: AngularFireList<any>;
   questions: Observable<any>;
 
   constructor(public database: AngularFireDatabase) {
     this.ref = database.list('questions');
+    this.answersRef = database.list('answers');
     this.questions = this.ref.snapshotChanges().map(cambios => {
       return cambios.map(change => {
         return {
@@ -30,6 +32,14 @@ export class DataService {
 
   addQuestion(descripcionPregunta: string) {
     this.ref.push({description: descripcionPregunta, nivel: 'principiante'});
+  }
+
+  addAnswer(alternative: string, question: string, user: string) {
+    this.answersRef.push({
+      alternative: alternative,
+      question: question,
+      user: user
+    });
   }
 
 }
