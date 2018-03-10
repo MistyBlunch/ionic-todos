@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FeedPage } from '../pages/feed/feed';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -12,6 +13,9 @@ import { TabsPage } from '../pages/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
+  @ViewChild(Nav) nav: Nav
+
   rootPage:any = TabsPage;
 
   constructor(
@@ -33,6 +37,10 @@ export class MyApp {
   }
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  goToFeed() {
+    this.nav.push(FeedPage);
   }
 
 }
