@@ -4,7 +4,7 @@
 </ion-header>
 
 <ion-content no-padding>
-  <div class="banner">
+  <!-- <div class="banner">
     <img src="assets/img/alex-profile-background.png" class="background">
     <img src="assets/img/alex-profile-pic.png" class="avatar" *ngIf="mostrarFoto">
   </div>
@@ -53,5 +53,18 @@
           <ion-icon name="logo-twitter"></ion-icon>
         </button>
     </ion-col>
-  </ion-row>
+  </ion-row> -->
+  <ion-list>
+    <ion-item *ngFor="let pregunta of preguntas">
+      {{pregunta.description}}
+      <select>
+        <option
+          *ngFor="let opcion of pregunta.opciones"
+          [value]="opcion"
+        >
+          {{opcion}}
+        </option>
+      </select>
+    </ion-item>
+  </ion-list>
 </ion-content>

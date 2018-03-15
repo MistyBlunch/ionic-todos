@@ -42,4 +42,11 @@ export class DataService {
     });
   }
 
+  agregarRespuestaTest(alternative: string, question: string, userId: string) {
+    this.database.list('users/' + userId + '/test').push({
+      pregunta: question,
+      respuesta: alternative
+    });
+  }
+
 }

@@ -2,5 +2,7 @@
   "name": "ionic-todos",
   "app_id": "ef1f4f65",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

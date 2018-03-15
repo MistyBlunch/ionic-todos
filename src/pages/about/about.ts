@@ -22,6 +22,7 @@ export class AboutPage implements OnInit {
   ngOnInit() {
     this.dataService.getQuestions().subscribe(preguntas => {
       this.preguntas = preguntas;
+      console.log(this.preguntas);
     })
   }
 
@@ -46,7 +47,7 @@ export class AboutPage implements OnInit {
   }
 
   agregarRespuesta() {
-    this.dataService.addAnswer('alternativa1', 'pregunta2', 'salome');
+    this.dataService.agregarRespuestaTest('libros', 'identificadorqueyoquiero', 'identificador2');
   }
 
 
